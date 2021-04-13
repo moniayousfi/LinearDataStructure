@@ -1,0 +1,42 @@
+Algorithm SolutionArrayDistinct
+
+var 
+sum : integer:=0;
+flag : integer;
+set1 :integer[3, 1, 7, 9];
+set2  :integer[2, 4, 1, 9, 3];
+set3 =integer[];
+
+BEGIN
+
+// select distint elements from both arrays
+for (i=0;i<set1.length;i++){
+    flag = 0;
+  for(j=0 ;j<set2.length;j++)
+
+  {
+    if (set1[i] === set2[j])
+    {
+
+        // supprime 1 élément à partir de l'index j
+
+      set2.splice(j,1);
+      j--;
+      flag = 1;
+    }
+    } 
+
+     if(flag === 0) {
+            set3.push(set1[i]);
+     }
+}
+  set3.push(set2);
+
+  // Calculer Sum of set
+
+
+for (k=0;k<set3.length; k++)
+{
+sum += set3[k];
+}
+
